@@ -1377,6 +1377,13 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					old.kill(); // avoids duplicates (an element can only be controlled by one Draggable)
 				}
 
+				this.rotateBy = function(amount) {
+					self.rotation += amount;
+					self.x = self.rotation;
+					dirty = true;
+					render();
+				}
+
 				//give the user access to start/stop dragging...
 				this.startDrag = function(e) {
 					onPress(e);
